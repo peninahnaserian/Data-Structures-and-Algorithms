@@ -3,7 +3,7 @@
 def check_cycle(head):
     slow, fast = head, head
     
-    while fast and fast.next:
+    while fast and fast.next: #we check for both fast and fast.next since if there's no looop fast or fast.next would be null thus returning false
         slow = slow.next
         fast = fast.next.next
         

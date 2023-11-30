@@ -4,12 +4,17 @@
         while fast and fast.next:
             slow, fast = slow.next, fast.next.next
             
-        prev, slow, prev.next = slow, slow.next, None
+        prev = slow
+        slow = slow.next
+        prev.next = None
         
         while slow:
-            slow.next, prev, slow = prev, slow, slow.next
+            slow.next = prev
+            prev = slow
+            slow = slow.next
             
-        fast, slow = head, prev
+        fast = head
+        slow = prev
         
         while slow:
             if fast.val != slow.val: return False

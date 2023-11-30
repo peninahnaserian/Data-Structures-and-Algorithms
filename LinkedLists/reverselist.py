@@ -5,8 +5,7 @@ class ListNode:
         
         
 #Method 1 using recursion T O(n) M O(n)
-def reverse(head:ListNode) -> ListNode:
- 
+def reverse(head):
         # Base case: If head is empty or has reached the list end
         if head is None or head.next is None:
             return head
@@ -41,7 +40,7 @@ print(reverse(head))
     
 #Method 2 using iteration  T O(n) M O(1)
 #we use two pointers
-def reverse_list(head:ListNode) -> ListNode:
+def reverse_list(head):
     if not head or not head.next:
         return head
     
@@ -49,7 +48,7 @@ def reverse_list(head:ListNode) -> ListNode:
     curr = head
     
     while curr:
-        nxt = curr.nxt
+        nxt = curr.next
         
         curr.next = prev
         prev = curr

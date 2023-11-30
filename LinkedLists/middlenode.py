@@ -1,4 +1,4 @@
-#use the slow and fast pointer approach
+#use the slow and fast pointer approach(Floyd's)
 
 def middle_node(head):
     

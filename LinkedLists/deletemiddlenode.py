@@ -6,10 +6,7 @@ class ListNode(object):
         
 
 def delete_middle(head):
-    """
-    :type head: Optional[ListNode]
-    :rtype: Optional[ListNode]
-    """
+    
     if not head or not head.next:
         return None
 
