@@ -3,7 +3,7 @@ class ListNode:
         self.val = val
         self.next = next
 
-def remove_nth_from_end(head,n):
+def return_nth_from_end(head,n):
     dummy = ListNode(0, head)
     
     left = dummy
@@ -13,14 +13,8 @@ def remove_nth_from_end(head,n):
         right = right.next
         n -= 1
         
-    while right:
+    while right:   
         left = left.next
         right = right.next
-        
    
-    return left.next
-  
-
-
-    
-        
+    return left.next    

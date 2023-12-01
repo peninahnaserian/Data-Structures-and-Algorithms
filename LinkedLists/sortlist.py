@@ -21,7 +21,8 @@ def sort_list(head):
         return head
     
     #split the linked list into halves using slow and fast pointer
-    slow, fast = head, head
+    slow = head
+    fast = head.next
     
     while fast and fast.next:
         slow = slow.next  #moves 1 step
