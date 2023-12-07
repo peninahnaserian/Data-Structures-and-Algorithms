@@ -12,8 +12,8 @@ class Node:
         
         
 def check_binary_search_tree(root:Node):
-    def valid(node,left,right):
     
+    def valid(node,left,right):
         if not node:
             return True
         if not (node.val < right and node.val > left):
@@ -22,6 +22,7 @@ def check_binary_search_tree(root:Node):
                 valid(node.left,left,node.val) and 
                 valid(node.right, node.val, right)
                 )
+        
     return valid(root, float("-inf"),float("inf"))
 
 

@@ -1,16 +1,11 @@
-  def searchBST(root, val):
-        stack, subtree = [], None
-        while True:
-            while root:
-                if root.val == val: 
-                    subtree = root
-                stack.append(root)
-                root = root.left
-
-            if subtree: 
-                return subtree
-            
-            if not stack: 
-                return None
-
-            root = stack.pop().right
+  def search(root, val):
+         # If the root is None or its value is equal to the target value, return the root
+        if not root or root.val == val:
+            return root
+        
+        # If the target value is less than the root's value, search in the left subtree
+        if val < root.val:
+            return search(root.left, val)
+        else:
+            # If the target value is greater than the root's value, search in the right subtree
+            return search(root.right, val)

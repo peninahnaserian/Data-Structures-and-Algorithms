@@ -1,3 +1,5 @@
+# height-balanced tree: binary tree in which the height of the left and right subtree of any node differ by not more than one
+
 def is_balanced(root):
     if root is None:
         return True
@@ -5,7 +7,7 @@ def is_balanced(root):
     # This function will return height/ depth of tree
     def depth(root):
         if root is None:
-        return 0
+            return 0
         return max(depth(root.left), depth(root.right)) + 1
 
     l = depth(root.left)

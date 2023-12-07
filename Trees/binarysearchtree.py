@@ -5,14 +5,17 @@ class Node:
         self.right = None
 
 
-def search(root,key):
+def search(root,key):  #searching using recursion till root.val is key or none if not in the tree
     if root is None or root.val == key:
         return root
     
-    if root.val < key:
+    elif root.val < key:
         return search(root.right,key)
     
-    return search(root.left,key)
+    elif root.val > key:
+        return search(root.left,key)
+    else:
+        return None
 
 def insert(root, key):
     if root is None:
