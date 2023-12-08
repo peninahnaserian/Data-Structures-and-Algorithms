@@ -1,4 +1,4 @@
-def is_same_tree(p, q):
+def is_same_tree(p, q): #p and q are roots of the two trees
     
     def dfs(node1, node2):
 
