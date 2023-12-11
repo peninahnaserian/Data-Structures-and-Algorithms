@@ -40,17 +40,8 @@ def merge_lists(head_a, head_b):
  
     # Tail stores the last node
     tail = dummy_node
-    while True:
- 
-        # If any of the list gets completely empty
-        # directly join all the elements of the other list
-        if head_a is None:
-            tail.next = head_b
-            break
-        if head_b is None:
-            tail.next = head_a
-            break
- 
+    
+    while head_a and head_b:
         # Compare the data of the lists and whichever is smaller is
         # appended to the last of the merged list and the head is changed
         if head_a.data <= head_b.data:
@@ -59,10 +50,14 @@ def merge_lists(head_a, head_b):
         else:
             tail.next = head_b
             head_b = head_b.next
- 
         # Advance the tail
         tail = tail.next
- 
+    # If any of the list gets completely empty
+        # directly join all the elements of the other list
+    if head_a is None:
+        tail.next = head_b
+    if head_b is None:
+        tail.next = head_a 
     # Returns the head of the merged list
     return dummy_node.next
  
